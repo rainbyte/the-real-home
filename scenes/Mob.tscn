@@ -1,94 +1,95 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Mob.gd" type="Script" id=1]
-[ext_resource path="res://assets/ene_tv_1.png" type="Texture" id=2]
-[ext_resource path="res://assets/ene_tv_2.png" type="Texture" id=3]
-[ext_resource path="res://assets/ene_florero_1.png" type="Texture" id=4]
-[ext_resource path="res://assets/ene_florero_2.png" type="Texture" id=5]
-[ext_resource path="res://assets/ene_sofa_1.png" type="Texture" id=6]
-[ext_resource path="res://assets/ene_sofa_2.png" type="Texture" id=7]
-
-
-
-
-
-
-
+[ext_resource path="res://scenes/Bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/ene_tv_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/ene_tv_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/ene_sofa_1.png" type="Texture" id=5]
+[ext_resource path="res://assets/ene_sofa_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/ene_florero_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/ene_florero_2.png" type="Texture" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "swim",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "walk",
-"speed": 4.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "fly",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "walk",
+"speed": 4.0
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 10.0
-height = 20.0
+extents = Vector2( 10, 10 )
 
-[node name="Mob" type="RigidBody2D" index="0"]
+[node name="Mob" type="KinematicBody2D" index="0"]
 
 input_pickable = false
-collision_layer = 1
-collision_mask = 0
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 0.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
+collision_layer = 4
+collision_mask = 3
+collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
-min_speed = 150
-max_speed = 250
+detect_radius = 250
+fire_rate = 0.2
+Bullet = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 1 )
 animation = "fly"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -3.17494, -0.427091 )
+position = Vector2( -1.91393, -3.14065 )
 rotation = 1.5708
-scale = Vector2( 6.87189, 2.14449 )
+scale = Vector2( 5.99408, 4.88207 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Visibility" type="VisibilityNotifier2D" parent="." index="2"]
+[node name="Visibility" type="Area2D" parent="." index="2"]
 
-rect = Rect2( -10, -10, 20, 20 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( -9.53674e-07, -5 )
+scale = Vector2( 0.9375, 1.09375 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 8
+collision_mask = 2
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[connection signal="screen_exited" from="Visibility" to="." method="_on_Visibility_screen_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visibility" index="0"]
+
+[node name="ShootTimer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="Visibility" to="." method="_on_Visibility_body_entered"]
+
+[connection signal="body_exited" from="Visibility" to="." method="_on_Visibility_body_exited"]
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
 
 

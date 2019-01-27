@@ -21,11 +21,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 10.0117
-height = 20.8548
+extents = Vector2( 10, 10 )
 
 [node name="Player" type="KinematicBody2D"]
 
@@ -47,8 +46,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0.318139, 0.579608 )
-scale = Vector2( 2.72398, 1.68933 )
+position = Vector2( 0.318139, 2.86102e-06 )
+scale = Vector2( 2.72398, 3.07692 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
