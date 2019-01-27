@@ -20,7 +20,7 @@ func new_game():
 
 
 	$HUD.show_message("Get Ready")
-	global.goto_scene("res://scenes/Living.tscn")
+	global.goto_scene("res://scenes/HowToPlay.tscn")
 
 
 func _on_ScoreTimer_timeout():

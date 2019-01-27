@@ -14,4 +14,4 @@ func goto_scene(path):
 func capturar_recuerdo():
 	recuerdos += 1
 	if recuerdos >= 3:
-		goto_scene("res://scenes/Main.tscn")
+		goto_scene("res://scenes/TheEnd.tscn")

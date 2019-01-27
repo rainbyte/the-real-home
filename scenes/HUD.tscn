@@ -5,7 +5,7 @@
 
 [sub_resource type="DynamicFont" id=1]
 
-size = 64
+size = 128
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 2 )
@@ -19,7 +19,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="HUD" type="CanvasLayer" index="0"]
+[node name="HUD" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -58,10 +58,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -107.0
-margin_top = -200.0
-margin_right = 106.0
-margin_bottom = -100.0
+margin_left = -120.0
+margin_top = -390.0
+margin_right = 130.0
+margin_bottom = -290.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -79,7 +79,34 @@ flat = false
 align = 1
 _sections_unfolded = [ "Margin", "custom_fonts" ]
 
-[node name="MessageTimer" type="Timer" parent="." index="2"]
+[node name="CreditsButton" type="Button" parent="." index="2"]
+
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -120.0
+margin_top = -220.0
+margin_right = 127.0
+margin_bottom = -120.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Credits"
+flat = false
+align = 1
+_sections_unfolded = [ "Margin", "custom_fonts" ]
+
+[node name="MessageTimer" type="Timer" parent="." index="3"]
 
 process_mode = 1
 wait_time = 2.0
@@ -87,6 +114,8 @@ one_shot = true
 autostart = false
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+
+[connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
 
 [connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]
 
