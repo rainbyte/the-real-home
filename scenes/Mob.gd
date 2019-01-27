@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+const MOVE_SPEED = 100
+
 var mob_types = ["walk", "swim", "fly"]
 export (int) var detect_radius
 export (float) var fire_rate
@@ -22,9 +24,9 @@ func _ready():
 func _physics_process(delta):
 	update()
 	if target:
-		aim()
+		aim(delta)
 
-func aim():
+func aim(delta):
 	hit_pos = []
 	var space_state = get_world_2d().direct_space_state
 	var target_extents = target.get_node('CollisionShape2D').shape.extents - Vector2(5, 5)
@@ -38,9 +40,14 @@ func aim():
 		if result:
 			hit_pos.append(result.position)
 			if result.collider.name == "Player":
-				print("fooooo")
 				$AnimatedSprite.self_modulate.r = 1.0
 				rotation = (target.position - position).angle()
+
+				var vec_to_player = target.global_position - global_position
+				vec_to_player = vec_to_player.normalized()
+				global_rotation = atan2(vec_to_player.y, vec_to_player.x)
+				move_and_collide(vec_to_player * MOVE_SPEED * delta)
+			
 				if can_shoot:
 					shoot(pos)
 				break
@@ -76,3 +83,7 @@ func _on_Visibility_body_exited(body):
 
 func _on_ShootTimer_timeout():
 	can_shoot = true
+ 
+ 
+func kill():
+	queue_free()
