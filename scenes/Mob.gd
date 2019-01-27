@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 const MOVE_SPEED = 100
 
+export var min_speed = 150 # Min speed range
+export var max_speed = 250 # Max speed range
+
 var mob_types = ["walk", "swim", "fly"]
 export (int) var detect_radius
 export (float) var fire_rate
@@ -14,6 +17,7 @@ var hit_pos
 var can_shoot = true
 
 func _ready():
+	add_to_group("enemies")
 	$AnimatedSprite.self_modulate = Color(0.2, 0, 0)
 	var shape = CircleShape2D.new()
 	shape.radius = detect_radius

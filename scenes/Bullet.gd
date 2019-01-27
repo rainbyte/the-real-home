@@ -12,7 +12,7 @@ func _physics_process(delta):
 	position += velocity * delta
 
 func _on_Bullet_body_entered(body):
-	if body.name == "Mob":
+	if body.is_in_group("enemies"):
 		body.kill()
 
 	if body.name == "Player":

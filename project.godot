@@ -23,6 +23,10 @@ global="*res://scenes/global.gd"
 window/size/width=1280
 window/size/height=800
 
+[gui]
+
+theme/use_hidpi=true
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

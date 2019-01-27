@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/01 - ザ・かぷっちゅ - 冷たいロザリオ.ogg-5cb2d41eb561743c89102dd7796a8a45.oggstr"
+
+[deps]
+
+source_file="res://assets/01 - ザ・かぷっちゅ - 冷たいロザリオ.ogg"
+dest_files=[ "res://.import/01 - ザ・かぷっちゅ - 冷たいロザリオ.ogg-5cb2d41eb561743c89102dd7796a8a45.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
