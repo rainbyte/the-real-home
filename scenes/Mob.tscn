@@ -4,10 +4,10 @@
 [ext_resource path="res://scenes/Bullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ene_tv_1.png" type="Texture" id=3]
 [ext_resource path="res://assets/ene_tv_2.png" type="Texture" id=4]
-[ext_resource path="res://assets/ene_sofa_1.png" type="Texture" id=5]
-[ext_resource path="res://assets/ene_sofa_2.png" type="Texture" id=6]
-[ext_resource path="res://assets/ene_florero_1.png" type="Texture" id=7]
-[ext_resource path="res://assets/ene_florero_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/ene_florero_1.png" type="Texture" id=5]
+[ext_resource path="res://assets/ene_florero_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/ene_sofa_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/ene_sofa_2.png" type="Texture" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -19,13 +19,13 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
-"name": "fly",
-"speed": 3.0
+"name": "walk",
+"speed": 4.0
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "walk",
-"speed": 4.0
+"name": "fly",
+"speed": 3.0
 } ]
 _sections_unfolded = [ "Resource" ]
 
@@ -34,7 +34,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Mob" type="KinematicBody2D"]
+[node name="Mob" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 4
@@ -57,9 +57,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -1.91393, -3.14065 )
+position = Vector2( 0.0851374, -6.13803 )
 rotation = 1.5708
-scale = Vector2( 5.99408, 4.88207 )
+scale = Vector2( 4.68768, 4.49766 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 

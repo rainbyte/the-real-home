@@ -27,30 +27,16 @@ func _physics_process(delta):
 		aim(delta)
 
 func aim(delta):
-	hit_pos = []
-	var space_state = get_world_2d().direct_space_state
-	var target_extents = target.get_node('CollisionShape2D').shape.extents - Vector2(5, 5)
-	var nw = target.position - target_extents
-	var se = target.position + target_extents
-	var ne = target.position + Vector2(target_extents.x, -target_extents.y)
-	var sw = target.position + Vector2(-target_extents.x, target_extents.y)
-	for pos in [target.position, nw, ne, se, sw]:
-		var result = space_state.intersect_ray(position,
-				pos, [self], collision_mask)
-		if result:
-			hit_pos.append(result.position)
-			if result.collider.name == "Player":
-				$AnimatedSprite.self_modulate.r = 1.0
-				rotation = (target.position - position).angle()
-
-				var vec_to_player = target.global_position - global_position
-				vec_to_player = vec_to_player.normalized()
-				global_rotation = atan2(vec_to_player.y, vec_to_player.x)
-				move_and_collide(vec_to_player * MOVE_SPEED * delta)
-			
-				if can_shoot:
-					shoot(pos)
-				break
+	if target.name == "Player":
+		$AnimatedSprite.self_modulate.r = 1.0
+		rotation = (target.position - position).angle()
+		var vec_to_player = target.global_position - global_position
+		vec_to_player = vec_to_player.normalized()
+		global_rotation = atan2(vec_to_player.y, vec_to_player.x)
+		if vec_to_player.length() < 100:
+			move_and_collide(vec_to_player * MOVE_SPEED * delta)
+			if can_shoot:
+				shoot(target.position)
 
 func shoot(pos):
 	var b = Bullet.instance()
@@ -63,9 +49,8 @@ func shoot(pos):
 func _draw():
 	draw_circle(Vector2(), detect_radius, vis_color)
 	if target:
-		for hit in hit_pos:
-			draw_circle((hit - position).rotated(-rotation), 5, laser_color)
-			draw_line(Vector2(), (hit - position).rotated(-rotation), laser_color)
+		draw_circle((target.position - position).rotated(-rotation), 5, laser_color)
+		draw_line(Vector2(), (target.position - position).rotated(-rotation), laser_color)
 
 func _on_Visibility_body_entered(body):
 	print("lala")
