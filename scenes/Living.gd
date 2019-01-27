@@ -40,3 +40,6 @@ func _on_MobTimer_timeout():
     mob.rotation = direction
     # Choose the velocity.
     #mob.set_linear_velocity(Vector2(rand_range(mob.min_speed, mob.max_speed), 0).rotated(direction))
+
+func _on_recuerdos_changed():
+	$CanvasLayer/recuerdos.text	 = "Recuerdos : " + str(global.recuerdos)

@@ -53,6 +53,7 @@ Bullet = ExtResource( 2 )
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 1 )
 animation = "fly"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 

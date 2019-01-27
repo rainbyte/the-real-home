@@ -10,3 +10,8 @@ func _ready():
 
 func goto_scene(path):
 	get_tree().change_scene(path)
+
+func capturar_recuerdo():
+	recuerdos += 1
+	if recuerdos >= 3:
+		goto_scene("res://scenes/Main.tscn")

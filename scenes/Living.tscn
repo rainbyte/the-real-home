@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/Living.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Mob.tscn" type="PackedScene" id=2]
@@ -6,15 +6,16 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Objetos/ObjetoCocina.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Objetos/ObjetoBiblioteca.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/Objetos/ObjetoMesitaLuz.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/Objetos/ObjetoSilla.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/Objetos/ObjetoTv.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/Objetos/ObjetoBacha.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/Objetos/ObjetoHeladera.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/15 - あきづきかおる - SURVIVE(カラオケ).ogg" type="AudioStream" id=12]
-[ext_resource path="res://assets/06 - 吉野裕司 - はしる.ogg" type="AudioStream" id=13]
-[ext_resource path="res://assets/01 - ザ・かぷっちゅ - 冷たいロザリオ.ogg" type="AudioStream" id=14]
-[ext_resource path="res://scenes/Objetos/ObjetoMesonCocina.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/Recuerdo.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Objetos/ObjetoMesitaLuz.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Objetos/ObjetoSilla.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Objetos/ObjetoTv.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/Objetos/ObjetoBacha.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/Objetos/ObjetoHeladera.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/15 - あきづきかおる - SURVIVE(カラオケ).ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/06 - 吉野裕司 - はしる.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/01 - ザ・かぷっちゅ - 冷たいロザリオ.ogg" type="AudioStream" id=15]
+[ext_resource path="res://scenes/Objetos/ObjetoMesonCocina.tscn" type="PackedScene" id=16]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -173,142 +174,21 @@ position = Vector2( 790, 680 )
 
 position = Vector2( 1550, 100 )
 
-[node name="Recuerdo" type="RigidBody2D" parent="." index="7"]
-
-position = Vector2( 9100, 3930 )
-scale = Vector2( 1, 1.59375 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Recuerdo" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array( -30, 40, 50, 30, 50, -30, -50, -30, -50, 30 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Recuerdo" index="1"]
-
-position = Vector2( -8800, -3620 )
-scale = Vector2( 1, 1 )
-polygon = PoolVector2Array( 8760, 3580, 8780, 3600, 8800, 3610, 8810, 3590, 8820, 3610, 8840, 3600, 8840, 3620, 8820, 3640, 8820, 3620, 8780, 3620, 8770, 3630, 8790, 3660, 8770, 3650, 8750, 3630, 8770, 3610 )
-uv = PoolVector2Array(  )
-color = Color( 1, 1, 1, 1 )
-vertex_colors = PoolColorArray(  )
-offset = Vector2( 0, 0 )
-antialiased = false
-texture = null
-texture_offset = Vector2( 0, 0 )
-texture_scale = Vector2( 1, 1 )
-texture_rotation_degrees = 0.0
-invert_enable = false
-invert_border = 100.0
-
-[node name="ObjetoBiblioteca2" parent="." index="8" instance=ExtResource( 6 )]
+[node name="ObjetoBiblioteca2" parent="." index="7" instance=ExtResource( 6 )]
 
 position = Vector2( 1790, 450 )
 
-[node name="Recuerdo2" type="RigidBody2D" parent="." index="9"]
+[node name="Recuerdo4" parent="." index="8" instance=ExtResource( 7 )]
 
-position = Vector2( -1710, 5930 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
+position = Vector2( 2610, 10030 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Recuerdo2" index="0"]
+[node name="Recuerdo5" parent="." index="9" instance=ExtResource( 7 )]
 
-build_mode = 0
-polygon = PoolVector2Array( -30, 40, 50, 30, 50, -30, -50, -30, -50, 30 )
+position = Vector2( 8990, 4050 )
 
-[node name="Polygon2D" type="Polygon2D" parent="Recuerdo2" index="1"]
+[node name="Recuerdo6" parent="." index="10" instance=ExtResource( 7 )]
 
-position = Vector2( -8800, -3620 )
-scale = Vector2( 1, 1 )
-polygon = PoolVector2Array( 8760, 3580, 8780, 3600, 8800, 3610, 8810, 3590, 8820, 3610, 8840, 3600, 8840, 3620, 8820, 3640, 8820, 3620, 8780, 3620, 8770, 3630, 8790, 3660, 8770, 3650, 8750, 3630, 8770, 3610 )
-uv = PoolVector2Array(  )
-color = Color( 1, 1, 1, 1 )
-vertex_colors = PoolColorArray(  )
-offset = Vector2( 0, 0 )
-antialiased = false
-texture = null
-texture_offset = Vector2( 0, 0 )
-texture_scale = Vector2( 1, 1 )
-texture_rotation_degrees = 0.0
-invert_enable = false
-invert_border = 100.0
-
-[node name="Recuerdo3" type="RigidBody2D" parent="." index="10"]
-
-position = Vector2( 2410, 9920 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Recuerdo3" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array( -30, 40, 50, 30, 50, -30, -50, -30, -50, 30 )
-
-[node name="Polygon2D" type="Polygon2D" parent="Recuerdo3" index="1"]
-
-position = Vector2( -8800, -3620 )
-scale = Vector2( 1, 1 )
-polygon = PoolVector2Array( 8760, 3580, 8780, 3600, 8800, 3610, 8810, 3590, 8820, 3610, 8840, 3600, 8840, 3620, 8820, 3640, 8820, 3620, 8780, 3620, 8770, 3630, 8790, 3660, 8770, 3650, 8750, 3630, 8770, 3610 )
-uv = PoolVector2Array(  )
-color = Color( 1, 1, 1, 1 )
-vertex_colors = PoolColorArray(  )
-offset = Vector2( 0, 0 )
-antialiased = false
-texture = null
-texture_offset = Vector2( 0, 0 )
-texture_scale = Vector2( 1, 1 )
-texture_rotation_degrees = 0.0
-invert_enable = false
-invert_border = 100.0
+position = Vector2( -1540, 5710 )
 
 [node name="MobPath" type="Path2D" parent="." index="11"]
 
@@ -334,42 +214,42 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="ObjetoMesitadelu" parent="." index="13" instance=ExtResource( 7 )]
+[node name="ObjetoMesitadelu" parent="." index="13" instance=ExtResource( 8 )]
 
 position = Vector2( 2060, 740 )
 scale = Vector2( 1, 1 )
 
-[node name="ObjetoSilla" parent="." index="14" instance=ExtResource( 8 )]
+[node name="ObjetoSilla" parent="." index="14" instance=ExtResource( 9 )]
 
 position = Vector2( 2660, 210 )
 scale = Vector2( 1, 1 )
 
-[node name="ObjetoSilla2" parent="." index="15" instance=ExtResource( 8 )]
+[node name="ObjetoSilla2" parent="." index="15" instance=ExtResource( 9 )]
 
 position = Vector2( 2860, 790 )
 scale = Vector2( 1, 1 )
 
-[node name="ObjetoSilla3" parent="." index="16" instance=ExtResource( 8 )]
+[node name="ObjetoSilla3" parent="." index="16" instance=ExtResource( 9 )]
 
 position = Vector2( 3100, 220 )
 scale = Vector2( 1, 1 )
 
-[node name="ObjetoTv" parent="." index="17" instance=ExtResource( 9 )]
+[node name="ObjetoTv" parent="." index="17" instance=ExtResource( 10 )]
 
 position = Vector2( 3860, 220 )
 scale = Vector2( 1, 1 )
 
-[node name="ObjetoBacha" parent="." index="18" instance=ExtResource( 10 )]
+[node name="ObjetoBacha" parent="." index="18" instance=ExtResource( 11 )]
 
 position = Vector2( 3680, 890 )
 scale = Vector2( 1, 1 )
 
-[node name="ObjetoHeladera" parent="." index="19" instance=ExtResource( 11 )]
+[node name="ObjetoHeladera" parent="." index="19" instance=ExtResource( 12 )]
 
 position = Vector2( 2700, 880 )
 scale = Vector2( 1, 1 )
 
-[node name="ObjetoHeladera2" parent="." index="20" instance=ExtResource( 11 )]
+[node name="ObjetoHeladera2" parent="." index="20" instance=ExtResource( 12 )]
 
 position = Vector2( 4320, 770 )
 scale = Vector2( 1, 1 )
@@ -378,7 +258,7 @@ scale = Vector2( 1, 1 )
 
 position = Vector2( 3465, 4540 )
 scale = Vector2( 47.6563, 5 )
-stream = ExtResource( 12 )
+stream = ExtResource( 13 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
@@ -391,7 +271,7 @@ area_mask = 1
 
 position = Vector2( 3000, -400 )
 scale = Vector2( 224.531, 20.4688 )
-stream = ExtResource( 13 )
+stream = ExtResource( 14 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
@@ -404,7 +284,7 @@ area_mask = 1
 
 position = Vector2( 3050, 7355 )
 scale = Vector2( 15.3125, -18.2812 )
-stream = ExtResource( 14 )
+stream = ExtResource( 15 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
@@ -413,12 +293,12 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="ObjetoTv2" parent="." index="24" instance=ExtResource( 9 )]
+[node name="ObjetoTv2" parent="." index="24" instance=ExtResource( 10 )]
 
 position = Vector2( 2700, 780 )
 scale = Vector2( 1, 1 )
 
-[node name="ObjetoHeladera3" parent="." index="25" instance=ExtResource( 11 )]
+[node name="ObjetoHeladera3" parent="." index="25" instance=ExtResource( 12 )]
 
 position = Vector2( 2980, 890 )
 scale = Vector2( 1, 1 )
@@ -453,12 +333,12 @@ scale = Vector2( 1, 1 )
 position = Vector2( 1232, 9392 )
 scale = Vector2( 1, 1 )
 
-[node name="ObjetoMesitadelu2" parent="." index="32" instance=ExtResource( 7 )]
+[node name="ObjetoMesitadelu2" parent="." index="32" instance=ExtResource( 8 )]
 
 position = Vector2( 1902, 9172 )
 scale = Vector2( 1, 1 )
 
-[node name="ObjetoMesonCocina" parent="." index="33" instance=ExtResource( 15 )]
+[node name="ObjetoMesonCocina" parent="." index="33" instance=ExtResource( 16 )]
 
 position = Vector2( 1462, 9462 )
 scale = Vector2( 1, 1 )
@@ -466,6 +346,12 @@ scale = Vector2( 1, 1 )
 [connection signal="gameover" from="Player" to="." method="_on_Player_gameover"]
 
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
+
+[connection signal="recuerdos_changed" from="Recuerdo4" to="." method="_on_recuerdos_changed"]
+
+[connection signal="recuerdos_changed" from="Recuerdo5" to="." method="_on_recuerdos_changed"]
+
+[connection signal="recuerdos_changed" from="Recuerdo6" to="." method="_on_recuerdos_changed"]
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 
