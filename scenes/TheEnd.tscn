@@ -1,15 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/TheEnd.gd" type="Script" id=1]
-[ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/audio/Menu theme.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/background/theend-hmmniced.png" type="Texture" id=2]
+[ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/audio/Menu theme.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 96
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=2]
@@ -17,10 +18,10 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 80
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="TheEnd" type="CanvasLayer"]
+[node name="TheEnd" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -29,7 +30,15 @@ scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
 
-[node name="Label" type="Label" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 640.079, 401.564 )
+rotation = 1.5708
+scale = Vector2( 1.79214, 1.58939 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Label" type="Label" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -43,6 +52,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0.92785, 0, 1, 1 )
 text = "Luego de sufrir tanto,
 has recuperado
 tus memorias perdidas,
@@ -52,9 +62,9 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "custom_colors" ]
 
-[node name="Button" type="Button" parent="." index="1"]
+[node name="Button" type="Button" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -81,9 +91,9 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
 
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true

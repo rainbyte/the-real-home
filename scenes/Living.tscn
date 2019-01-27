@@ -272,7 +272,7 @@ area_mask = 1
 
 [node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="." index="23"]
 
-position = Vector2( 3034, 8021 )
+position = Vector2( 3034, 8092 )
 scale = Vector2( 15.3125, -17.1875 )
 stream = ExtResource( 13 )
 volume_db = 0.0

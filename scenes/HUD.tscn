@@ -45,12 +45,15 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0.717122, 0, 1, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 3
 text = "The Real Home"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 
 [node name="StartButton" type="Button" parent="." index="1"]
 
