@@ -173,14 +173,10 @@ position = Vector2( 790, 680 )
 
 position = Vector2( 1550, 100 )
 
-[node name="ObjetoBiblioteca2" parent="." index="7" instance=ExtResource( 6 )]
+[node name="Recuerdo" type="RigidBody2D" parent="." index="7"]
 
-position = Vector2( 1790, 450 )
-
-[node name="Recuerdo" type="RigidBody2D" parent="." index="8"]
-
-editor/display_folded = true
-position = Vector2( 8850, 4130 )
+position = Vector2( 9100, 3930 )
+scale = Vector2( 1, 1.59375 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -221,6 +217,10 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
+
+[node name="ObjetoBiblioteca2" parent="." index="8" instance=ExtResource( 6 )]
+
+position = Vector2( 1790, 450 )
 
 [node name="Recuerdo2" type="RigidBody2D" parent="." index="9"]
 
@@ -268,7 +268,7 @@ invert_border = 100.0
 
 [node name="Recuerdo3" type="RigidBody2D" parent="." index="10"]
 
-position = Vector2( 2760, 10240 )
+position = Vector2( 2410, 9920 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -317,8 +317,8 @@ curve = SubResource( 1 )
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath" index="0"]
 
-position = Vector2( 1600, 810 )
-rotation = -0.896089
+position = Vector2( 1210, 210 )
+rotation = -0.00806709
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -376,8 +376,8 @@ scale = Vector2( 1, 1 )
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." index="21"]
 
-position = Vector2( 5405, 4740 )
-scale = Vector2( 234.844, 71.5625 )
+position = Vector2( 3465, 4540 )
+scale = Vector2( 47.6563, 5 )
 stream = ExtResource( 12 )
 volume_db = 0.0
 pitch_scale = 1.0
@@ -395,15 +395,15 @@ stream = ExtResource( 13 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
-max_distance = 4000.0
+max_distance = 3000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
 [node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="." index="23"]
 
-position = Vector2( 2095, 9120 )
-scale = Vector2( 121.094, -72.1875 )
+position = Vector2( 3050, 7355 )
+scale = Vector2( 15.3125, -18.2812 )
 stream = ExtResource( 14 )
 volume_db = 0.0
 pitch_scale = 1.0
@@ -430,34 +430,37 @@ scale = Vector2( 1, 1 )
 
 [node name="ObjetoBiblioteca" parent="." index="27" instance=ExtResource( 6 )]
 
-position = Vector2( 2710, 10060 )
+position = Vector2( 2412, 9762 )
 scale = Vector2( 1, 1 )
 
 [node name="ObjetoBiblioteca3" parent="." index="28" instance=ExtResource( 6 )]
 
-position = Vector2( 2610, 10170 )
+position = Vector2( 2312, 9872 )
 scale = Vector2( 1, 1 )
 
 [node name="ObjetoBiblioteca4" parent="." index="29" instance=ExtResource( 6 )]
 
-position = Vector2( 2510, 10320 )
+position = Vector2( 2212, 10022 )
 scale = Vector2( 1, 1 )
-
-[node name="ObjetoCocina" parent="ObjetoBiblioteca4" index="2" instance=ExtResource( 5 )]
-
-position = Vector2( -980, -630 )
-
-[node name="ObjetoMesitadelu" parent="ObjetoBiblioteca4" index="3" instance=ExtResource( 7 )]
-
-position = Vector2( -310, -850 )
-
-[node name="ObjetoMesonCocina" parent="ObjetoBiblioteca4" index="4" instance=ExtResource( 15 )]
-
-position = Vector2( -750, -560 )
 
 [node name="ObjetoBiblioteca5" parent="." index="30" instance=ExtResource( 6 )]
 
-position = Vector2( 2870, 10010 )
+position = Vector2( 2572, 9712 )
+scale = Vector2( 1, 1 )
+
+[node name="ObjetoCocina3" parent="." index="31" instance=ExtResource( 5 )]
+
+position = Vector2( 1232, 9392 )
+scale = Vector2( 1, 1 )
+
+[node name="ObjetoMesitadelu2" parent="." index="32" instance=ExtResource( 7 )]
+
+position = Vector2( 1902, 9172 )
+scale = Vector2( 1, 1 )
+
+[node name="ObjetoMesonCocina" parent="." index="33" instance=ExtResource( 15 )]
+
+position = Vector2( 1462, 9462 )
 scale = Vector2( 1, 1 )
 
 [connection signal="gameover" from="Player" to="." method="_on_Player_gameover"]

@@ -1,7 +1,7 @@
 extends Node
 
 var current_scene = null
-var playerHP = 10
+var playerHP = 50
 var recuerdos  = 0
 
 func _ready():

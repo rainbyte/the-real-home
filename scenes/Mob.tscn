@@ -44,7 +44,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 min_speed = 150
 max_speed = 250
-detect_radius = 250
+detect_radius = 500
 fire_rate = 0.6
 Bullet = ExtResource( 2 )
 
