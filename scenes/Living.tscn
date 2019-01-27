@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/Living.gd" type="Script" id=1]
 [ext_resource path="res://textures/Texturas.tres" type="TileSet" id=2]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Mob.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Objetos/ObjetoCocina.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Objetos/ObjetoBiblioteca.tscn" type="PackedScene" id=6]
 
 [node name="Living" type="Node2D"]
 
@@ -145,6 +147,18 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
+
+[node name="ObjetoCocina" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 840, 490 )
+
+[node name="ObjetoBiblioteca1" parent="." index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 980, 280 )
+
+[node name="ObjetoBiblioteca2" parent="." index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 1030, 720 )
 
 [connection signal="gameover" from="Player" to="." method="_on_Player_gameover"]
 
