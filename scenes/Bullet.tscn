@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/Bullet.gd" type="Script" id=1]
 
-[node name="Bullet" type="Area2D" index="0"]
+[node name="Bullet" type="Area2D"]
 
 position = Vector2( 0, 40 )
 scale = Vector2( 0.273438, 0.390625 )
@@ -46,5 +46,7 @@ polygon = PoolVector2Array( -19.2667, 32.2883, 79.5333, -2.88289, -17.5334, -31.
 __meta__ = {
 "_edit_group_": true
 }
+
+[connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
 
 

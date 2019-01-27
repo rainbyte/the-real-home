@@ -56,7 +56,7 @@ func _physics_process(delta):
 func shoot(pos):
 	var bullet = Bullet.instance()
 	var angle = orientation.angle() + rand_range(-0.05, 0.05)
-	bullet.start(global_position, angle)
+	bullet.start(global_position + orientation * 50, angle)
 	get_parent().add_child(bullet)
 
 
@@ -65,13 +65,22 @@ func _process(delta):
 	pass
 
 
-func _on_Player_body_entered(body):
-	hide() # Player dissapears after being hit
-	emit_signal("hit")
-	$CollisionShape2D.call_deferred("set_disabled", true)
+func _on_DamageArea_body_entered(body):
+	if body.name == "Mob":
+		global.playerHP -=1
+		print(global.playerHP)
+		emit_signal("hit")
+		if global.playerHP == 0 :
+			$CollisionShape2D.call_deferred("set_disabled", true)
+			game_over()
 
 
 func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
+
+
+func game_over():
+	show_message("Game Over")
+	global.goto_scene("res://scenes/Main.tscn")

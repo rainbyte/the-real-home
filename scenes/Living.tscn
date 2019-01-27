@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Mob.tscn" type="PackedScene" id=4]
 
-[node name="Living" type="Node2D" index="0"]
+[node name="Living" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -69,5 +69,56 @@ editor_draw_drag_margin = false
 [node name="Mob" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 1420, 460 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="4"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 2, 2 )
+transform = Transform2D( 2, 0, 0, 2, 0, 0 )
+
+[node name="recuerdos" type="Label" parent="CanvasLayer" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -634.0
+margin_top = -325.0
+margin_right = -534.0
+margin_bottom = -305.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="player_hp" type="Label" parent="CanvasLayer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 35.0
+margin_right = 95.0
+margin_bottom = 55.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = " "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 
 

@@ -1,7 +1,8 @@
 extends Node
 
 var current_scene = null
-var counter = 0
+var playerHP = 10
+var recuerdos  = 0
 
 func _ready():
 	var root = get_tree().get_root()
