@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/TheEnd.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/audio/Menu theme.wav" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -19,7 +20,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="TheEnd" type="CanvasLayer" index="0"]
+[node name="TheEnd" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -79,6 +80,15 @@ text = "VOLVER A TU HOGAR..."
 flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 

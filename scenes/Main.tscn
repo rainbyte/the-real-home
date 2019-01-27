@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/audio/Menu theme.wav" type="AudioStream" id=3]
 
 [node name="Main" type="Node"]
 
@@ -25,7 +26,18 @@ _sections_unfolded = [ "Anchor" ]
 [node name="HUD" parent="." index="1" instance=ExtResource( 2 )]
 
 scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="2"]
+
+position = Vector2( 640, 383 )
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="start_game" from="HUD" to="." method="new_game"]
 

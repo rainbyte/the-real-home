@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/Living.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Mob.tscn" type="PackedScene" id=2]
@@ -12,10 +12,8 @@
 [ext_resource path="res://scenes/Objetos/ObjetoTv.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Objetos/ObjetoBacha.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/Objetos/ObjetoHeladera.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/15 - あきづきかおる - SURVIVE(カラオケ).ogg" type="AudioStream" id=13]
-[ext_resource path="res://assets/06 - 吉野裕司 - はしる.ogg" type="AudioStream" id=14]
-[ext_resource path="res://assets/01 - ザ・かぷっちゅ - 冷たいロザリオ.ogg" type="AudioStream" id=15]
-[ext_resource path="res://scenes/Objetos/ObjetoMesonCocina.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/audio/level theme.wav" type="AudioStream" id=13]
+[ext_resource path="res://scenes/Objetos/ObjetoMesonCocina.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -24,7 +22,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1210, 210, 0, 0, 0, 0, 2450, 200, 0, 0, 0, 0, 3490, 200, 0, 0, 0, 0, 4160, 270, 0, 0, 0, 0, 4230, 740, 0, 0, 0, 0, 4810, 770, 0, 0, 0, 0, 5410, 780, 0, 0, 0, 0, 5390, 2300, 0, 0, 0, 0, 7340, 2310, 0, 0, 0, 0, 7440, 3130, 0, 0, 0, 0, 10190, 3210, 0, 0, 0, 0, 10200, 4020, 0, 0, 0, 0, 9260, 4040, 0, 0, 0, 0, 8880, 3730, 0, 0, 0, 0, 9530, 3770, 0, 0, 0, 0, 10130, 3600, 0, 0, 0, 0, 10060, 3300, 0, 0, 0, 0, 5330, 3250, 0, 0, 0, 0, 6490, 2870, 0, 0, 0, 0, 5310, 2830, 0, 0, 0, 0, 5280, 840, 0, 0, 0, 0, 4120, 830, 0, 0, 0, 0, 3200, 630, 0, 0, 0, 0, 2860, 650, 0, 0, 0, 0, 2840, 2000, 0, 0, 0, 0, 2040, 1990, 0, 0, 0, 0, 2060, 4480, 0, 0, 0, 0, 5110, 4350, 0, 0, 0, 0, 5110, 7660, 0, 0, 0, 0, 2630, 7770, 0, 0, 0, 0, 2860, 9570, 0, 0, 0, 0, 2130, 10190, 0, 0, 0, 0, 1390, 9960, 0, 0, 0, 0, 1360, 8880, 0, 0, 0, 0, 2090, 8610, 0, 0, 0, 0, 1600, 8210, 0, 0, 0, 0, 1380, 7560, 0, 0, 0, 0, 2030, 7640, 0, 0, 0, 0, 2560, 7460, 0, 0, 0, 0, 4910, 7390, 0, 0, 0, 0, 4930, 4660, 0, 0, 0, 0, 1960, 4730, 0, 0, 0, 0, 1880, 2630, 0, 0, 0, 0, 1870, 1980, 0, 0, 0, 0, -1370, 2000, 0, 0, 0, 0, -1340, 3470, 0, 0, 0, 0, 600, 3470, 0, 0, 0, 0, 580, 5900, 0, 0, 0, 0, -1490, 5920, 0, 0, 0, 0, -1550, 5580, 0, 0, 0, 0, -590, 5670, 0, 0, 0, 0, 500, 5620, 0, 0, 0, 0, 450, 3660, 0, 0, 0, 0, -1460, 3650, 0, 0, 0, 0, -1510, 1890, 0, 0, 0, 0, 2790, 1820, 0, 0, 0, 0, 2760, 700, 0, 0, 0, 0, 1230, 790, 0, 0, 0, 0, 1210, 210 )
 }
 
-[node name="Living" type="Node2D"]
+[node name="Living" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 Mob = ExtResource( 2 )
@@ -217,42 +215,34 @@ autostart = false
 [node name="ObjetoMesitadelu" parent="." index="13" instance=ExtResource( 8 )]
 
 position = Vector2( 2060, 740 )
-scale = Vector2( 1, 1 )
 
 [node name="ObjetoSilla" parent="." index="14" instance=ExtResource( 9 )]
 
 position = Vector2( 2660, 210 )
-scale = Vector2( 1, 1 )
 
 [node name="ObjetoSilla2" parent="." index="15" instance=ExtResource( 9 )]
 
 position = Vector2( 2860, 790 )
-scale = Vector2( 1, 1 )
 
 [node name="ObjetoSilla3" parent="." index="16" instance=ExtResource( 9 )]
 
 position = Vector2( 3100, 220 )
-scale = Vector2( 1, 1 )
 
 [node name="ObjetoTv" parent="." index="17" instance=ExtResource( 10 )]
 
 position = Vector2( 3860, 220 )
-scale = Vector2( 1, 1 )
 
 [node name="ObjetoBacha" parent="." index="18" instance=ExtResource( 11 )]
 
 position = Vector2( 3680, 890 )
-scale = Vector2( 1, 1 )
 
 [node name="ObjetoHeladera" parent="." index="19" instance=ExtResource( 12 )]
 
 position = Vector2( 2700, 880 )
-scale = Vector2( 1, 1 )
 
 [node name="ObjetoHeladera2" parent="." index="20" instance=ExtResource( 12 )]
 
 position = Vector2( 4320, 770 )
-scale = Vector2( 1, 1 )
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." index="21"]
 
@@ -262,7 +252,7 @@ stream = ExtResource( 13 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
-max_distance = 3000.0
+max_distance = 3500.0
 attenuation = 0.203232
 bus = "Master"
 area_mask = 1
@@ -271,7 +261,7 @@ area_mask = 1
 
 position = Vector2( 3000, -400 )
 scale = Vector2( 224.531, 20.4688 )
-stream = ExtResource( 14 )
+stream = ExtResource( 13 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
@@ -282,9 +272,9 @@ area_mask = 1
 
 [node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="." index="23"]
 
-position = Vector2( 3050, 7355 )
-scale = Vector2( 15.3125, -18.2812 )
-stream = ExtResource( 15 )
+position = Vector2( 3034, 8021 )
+scale = Vector2( 15.3125, -17.1875 )
+stream = ExtResource( 13 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
@@ -296,52 +286,42 @@ area_mask = 1
 [node name="ObjetoTv2" parent="." index="24" instance=ExtResource( 10 )]
 
 position = Vector2( 2700, 780 )
-scale = Vector2( 1, 1 )
 
 [node name="ObjetoHeladera3" parent="." index="25" instance=ExtResource( 12 )]
 
 position = Vector2( 2980, 890 )
-scale = Vector2( 1, 1 )
 
 [node name="ObjetoCocina2" parent="." index="26" instance=ExtResource( 5 )]
 
 position = Vector2( 2970, 790 )
-scale = Vector2( 1, 1 )
 
 [node name="ObjetoBiblioteca" parent="." index="27" instance=ExtResource( 6 )]
 
 position = Vector2( 2412, 9762 )
-scale = Vector2( 1, 1 )
 
 [node name="ObjetoBiblioteca3" parent="." index="28" instance=ExtResource( 6 )]
 
 position = Vector2( 2312, 9872 )
-scale = Vector2( 1, 1 )
 
 [node name="ObjetoBiblioteca4" parent="." index="29" instance=ExtResource( 6 )]
 
 position = Vector2( 2212, 10022 )
-scale = Vector2( 1, 1 )
 
 [node name="ObjetoBiblioteca5" parent="." index="30" instance=ExtResource( 6 )]
 
 position = Vector2( 2572, 9712 )
-scale = Vector2( 1, 1 )
 
 [node name="ObjetoCocina3" parent="." index="31" instance=ExtResource( 5 )]
 
 position = Vector2( 1232, 9392 )
-scale = Vector2( 1, 1 )
 
 [node name="ObjetoMesitadelu2" parent="." index="32" instance=ExtResource( 8 )]
 
 position = Vector2( 1902, 9172 )
-scale = Vector2( 1, 1 )
 
-[node name="ObjetoMesonCocina" parent="." index="33" instance=ExtResource( 16 )]
+[node name="ObjetoMesonCocina" parent="." index="33" instance=ExtResource( 14 )]
 
 position = Vector2( 1462, 9462 )
-scale = Vector2( 1, 1 )
 
 [connection signal="gameover" from="Player" to="." method="_on_Player_gameover"]
 
